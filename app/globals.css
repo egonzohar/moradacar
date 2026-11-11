@@ -1,1 +1,71 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --morada-blue: #23358E;
+    --morada-blue-deep: #152266;
+    --morada-yellow: #FFD200;
+    --morada-obsidian: #0A0E17;
+  }
+
+  body {
+    font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
+  }
+
+  h1, h2, h3, h4, .font-display {
+    font-family: var(--font-jakarta), system-ui, -apple-system, sans-serif;
+  }
+
+  .font-mono-num {
+    font-family: var(--font-mono), monospace;
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+@keyframes floatSlow {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    opacity: 0.45;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.85;
+    transform: scale(1.06);
+  }
+}
+
+@keyframes routeDash {
+  to {
+    stroke-dashoffset: -40;
+  }
+}
+
+.animate-float-slow {
+  animation: floatSlow 5.5s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 4s ease-in-out infinite;
+}
+
+.animate-route-dash {
+  stroke-dasharray: 8 6;
+  animation: routeDash 1.6s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-float-slow,
+  .animate-pulse-glow,
+  .animate-route-dash {
+    animation: none !important;
+  }
+}
 
